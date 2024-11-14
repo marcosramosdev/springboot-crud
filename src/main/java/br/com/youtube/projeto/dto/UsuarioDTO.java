@@ -11,11 +11,12 @@ public class UsuarioDTO {
     private String senha;
     private String email;
 
+    public UsuarioDTO() {}
+
     public UsuarioDTO(UsuarioEntity usuario) {
         BeanUtils.copyProperties(usuario, this);
     }
 
-    public UsuarioDTO() {}
 
 
     public Long getId() {
