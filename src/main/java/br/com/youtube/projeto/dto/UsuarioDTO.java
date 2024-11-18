@@ -1,7 +1,6 @@
 package br.com.youtube.projeto.dto;
 
 import br.com.youtube.projeto.entity.UsuarioEntity;
-import com.fasterxml.jackson.databind.util.BeanUtil;
 import org.springframework.beans.BeanUtils;
 
 public class UsuarioDTO {
@@ -16,7 +15,6 @@ public class UsuarioDTO {
     public UsuarioDTO(UsuarioEntity usuario) {
         BeanUtils.copyProperties(usuario, this);
     }
-
 
 
     public Long getId() {

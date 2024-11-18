@@ -3,9 +3,7 @@ package br.com.youtube.projeto.entity;
 
 import br.com.youtube.projeto.dto.PerfilDTO;
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.beans.BeanUtils;
 
 @Entity
@@ -13,6 +11,9 @@ import org.springframework.beans.BeanUtils;
 @Getter
 @Setter
 @EqualsAndHashCode
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class PerfilEntity {
 
     @Id
@@ -22,9 +23,9 @@ public class PerfilEntity {
     @Column(nullable = false)
     private String descricao;
 
-    public PerfilEntity() {}
-
     public PerfilEntity(PerfilDTO perfilDTO){
         BeanUtils.copyProperties(perfilDTO, this);
     }
+
+
 }
